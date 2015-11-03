@@ -1,0 +1,30 @@
+<configuration>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern> %d{HH:mm:ss.SSS} %-5level [%thread] %logger{40} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	<appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern> %d{HH:mm:ss.SSS} [%thread] %-5level %logger{40} - %msg%n
+			</pattern>
+		</encoder>
+		<target>System.err</target>
+	</appender>
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>proteomicstools-error.log</file>
+		<filter class="org.proteomicstools.log.fragment.FilterErr" />
+		<append>false</append>
+		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
+			by default -->
+		<encoder>
+			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</root>
+</configuration>

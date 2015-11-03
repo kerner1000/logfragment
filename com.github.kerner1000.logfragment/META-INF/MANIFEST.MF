@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Log Fragment
+Bundle-SymbolicName: com.github.kerner1000.logfragment
+Bundle-Version: 1.0.0.qualifier
+Fragment-Host: ch.qos.logback.classic
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
